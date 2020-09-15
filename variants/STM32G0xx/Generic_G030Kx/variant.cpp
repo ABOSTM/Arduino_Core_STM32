@@ -10,7 +10,7 @@
  *
  *******************************************************************************
  */
-
+#if defined(ARDUINO_GENERIC_G030K6) || defined(ARDUINO_GENERIC_G030K8)
 #include "pins_arduino.h"
 
 #ifdef __cplusplus
@@ -171,3 +171,4 @@ WEAK void SystemClock_Config(void)
 #ifdef __cplusplus
 } // extern "C"
 #endif
+#endif /* ARDUINO_GENERIC_* */

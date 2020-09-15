@@ -1660,6 +1660,14 @@ GenG0.menu.pnum.GENERIC_G030K8.build.board=GENERIC_G030K8
 GenG0.menu.pnum.GENERIC_G030K8.build.product_line=STM32G030xx
 GenG0.menu.pnum.GENERIC_G030K8.build.variant=STM32G0xx/Generic_G030Kx
 
+# Aurora One G030K8
+GenG0.menu.pnum.AURORA_ONE=Aurora One
+GenG0.menu.pnum.AURORA_ONE.upload.maximum_size=65536
+GenG0.menu.pnum.AURORA_ONE.upload.maximum_data_size=16384
+GenG0.menu.pnum.AURORA_ONE.build.board=AURORA_ONE
+GenG0.menu.pnum.AURORA_ONE.build.product_line=STM32G030xx
+GenG0.menu.pnum.AURORA_ONE.build.variant=STM32G0xx/Generic_G030Kx
+
 # Generic G031J4
 GenG0.menu.pnum.GENERIC_G031J4=Generic G031J4
 GenG0.menu.pnum.GENERIC_G031J4.upload.maximum_size=16384
