@@ -1,3 +1,17 @@
+/* Remap pin name */
+PA_9_R    = PA_9 | PREMAP,
+PA_10_R   = PA_10 | PREMAP,
+
+/* Alternate pin name */
+PA_6_ALT1 = PA_6 | ALT1,
+PA_7_ALT1 = PA_7 | ALT1,
+PA_7_ALT2 = PA_7 | ALT2,
+PA_7_ALT3 = PA_7 | ALT3,
+PB_0_ALT1 = PB_0 | ALT1,
+PB_1_ALT1 = PB_1 | ALT1,
+PB_1_ALT2 = PB_1 | ALT2,
+PB_6_ALT1 = PB_6 | ALT1,
+
 /* SYS_WKUP */
 #ifdef PWR_WAKEUP_PIN1
   SYS_WKUP1 = PA_0,
@@ -23,3 +37,5 @@
 #ifdef PWR_WAKEUP_PIN8
   SYS_WKUP8 = NC,
 #endif
+
+/* No USB */

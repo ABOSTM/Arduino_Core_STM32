@@ -1,21 +1,17 @@
 /*
-  Copyright (c) 2011 Arduino.  All right reserved.
+ *******************************************************************************
+ * Copyright (c) 2021, STMicroelectronics
+ * All rights reserved.
+ *
+ * This software component is licensed by ST under BSD 3-Clause license,
+ * the "License"; You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at:
+ *                        opensource.org/licenses/BSD-3-Clause
+ *
+ *******************************************************************************
+ */
 
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Lesser General Public License for more details.
-
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
+#if defined(ARDUINO_NUCLEO_G071RB)
 #include "pins_arduino.h"
 
 #ifdef __cplusplus
@@ -24,40 +20,93 @@ extern "C" {
 
 // Pin number
 const PinName digitalPin[] = {
-  PA_0,
-  PA_1,
-  PA_2,
+  PC_5,
+  PC_4,
+  PA_10,
+  PB_3,
+  PB_5,
+  PB_4,
+  PB_14,
   PA_8,
   PA_9,
-  PA_10,
+  PC_7,
+  PB_0,
+  PA_7,
+  PA_6,
+  PA_5,
+  PB_9,
+  PB_8,
+  // ST Morpho
+  // CN7 Left Side
+  PC_10,
+  PC_12,
+  PA_14,
+  PD_0,
+  PD_3,
+  PA_13,
+  PD_4,
+  PA_15,
+  PB_7,
+  PC_13,
+  PC_14,
+  PC_15,
+  PF_0,
+  PF_1,
+  PC_2,
+  PC_3,
+  // CN7 Right Side
+  PC_11,
+  PD_2,
+  PD_1,
+  PD_5,
+  // CN10 Left Side
+  PC_9,
+  // CN10 Right side
+  PC_8,
+  PC_6,
+  PA_3,
+  PD_6,
   PA_11,
   PA_12,
-  PA_13,
-  PA_14,
-  PA_15,
-  PB_0,
-  PB_1,
-  PB_5,
+  PC_1,
+  PC_0,
+  PB_2,
   PB_6,
-  PB_7,
-  PB_8,
-  PB_9,
-  PC_14,
-  PF_2
+  PB_15,
+  PB_10,
+  PB_13,
+  PA_2,
+  PD_8,
+  PD_9,
+  PA_0,
+  PA_1,
+  PA_4,
+  PB_1,
+  PB_11,
+  PB_12,
+  PF_2,
+  PA_9_R,
+  PA_10_R
 };
 
 // Analog (Ax) pin number array
 const uint32_t analogInputPin[] = {
-  0,  //A0
-  1,  //A1
-  2,  //A2
-  6,  //A3
-  7,  //A4
-  8,  //A5
-  9,  //A6
-  11, //A7
-  12, //A8
-  15  //A9
+  53, //A0
+  54, //A1
+  55, //A2
+  56, //A3
+  57, //A4
+  58, //A5
+  11, //A6
+  12, //A7
+  45, //A8
+  48, //A9
+  0,  //A10
+  1,  //A11
+  10, //A12
+  13, //A13 - LED
+  39, //A14 - STLINK RX
+  50  //A15 - STLINK TX
 };
 
 #ifdef __cplusplus
@@ -125,3 +174,4 @@ WEAK void SystemClock_Config(void)
 #ifdef __cplusplus
 }
 #endif
+#endif /* ARDUINO_NUCLEO_G071RB */

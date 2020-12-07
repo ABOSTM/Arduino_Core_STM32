@@ -1,0 +1,159 @@
+/*
+ *******************************************************************************
+ * Copyright (c) 2021, STMicroelectronics
+ * All rights reserved.
+ *
+ * This software component is licensed by ST under BSD 3-Clause license,
+ * the "License"; You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at:
+ *                        opensource.org/licenses/BSD-3-Clause
+ *
+ *******************************************************************************
+ */
+#if defined(ARDUINO_GENERIC_G031J4) || defined(ARDUINO_GENERIC_G031J6)
+#include "pins_arduino.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// Digital PinName array
+const PinName digitalPin[] = {
+  PA_0,
+  PA_1,
+  PA_2,
+  PA_8,
+  PA_11,
+  PA_12,
+  PA_13,
+  PA_14,
+  PA_15,
+  PB_0,
+  PB_1,
+  PB_5,
+  PB_6,
+  PB_7,
+  PB_8,
+  PB_9,
+  PC_14,
+  PF_2,
+  PA_9_R,
+  PA_10_R
+};
+
+// Analog (Ax) pin number array
+const uint32_t analogInputPin[] = {
+  0,  // A0,  PA0
+  1,  // A1,  PA1
+  2,  // A2,  PA2
+  4,  // A3,  PA11
+  5,  // A4,  PA12
+  6,  // A5,  PA13
+  7,  // A6,  PA14
+  9,  // A7,  PB0
+  10, // A8,  PB1
+  13  // A9,  PB7
+};
+
+/******************************************************************************/
+/*            PLL (clocked by HSE bypass) used as System clock source                */
+/******************************************************************************/
+static bool SetSysClock_PLL_HSE(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {};
+  bool ret = false;
+
+  /* Configure the main internal regulator output voltage */
+  HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1);
+  /*
+   * Initializes the RCC Oscillators according to the specified parameters
+   * in the RCC_OscInitTypeDef structure.
+   */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV1;
+  RCC_OscInitStruct.PLL.PLLN = 16;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+  RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) == HAL_OK) {
+    /* Initializes the CPU, AHB and APB buses clocks */
+    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+                                  | RCC_CLOCKTYPE_PCLK1;
+    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) == HAL_OK) {
+      ret = true;
+    }
+  }
+  return ret;
+}
+
+/******************************************************************************/
+/*            PLL (clocked by HSI) used as System clock source                */
+/******************************************************************************/
+static bool SetSysClock_PLL_HSI(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {};
+  bool ret = false;
+
+  /* Configure the main internal regulator output voltage */
+  HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1);
+  /*
+   * Initializes the RCC Oscillators according to the specified parameters
+   * in the RCC_OscInitTypeDef structure.
+   */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSIDiv = RCC_HSI_DIV1;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV1;
+  RCC_OscInitStruct.PLL.PLLN = 16;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+  RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV4;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) == HAL_OK) {
+    /* Initializes the CPU, AHB and APB buses clocks */
+    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+                                  | RCC_CLOCKTYPE_PCLK1;
+    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) == HAL_OK) {
+      ret = true;
+    }
+  }
+  return ret;
+}
+
+WEAK void SystemClock_Config(void)
+{
+  /*
+   * HSE_VALUE defined in the stm32g0xx_hal_conf_default.h is used.
+   * If HSE_VALUE is not the same and you want use it, then:
+   * - Redefine HSE_VALUE to the correct HSE_VALUE
+   * and
+   * - Redefine SystemClock_Config() with the correct settings
+   */
+  /* 1- Try to to start with HSE bypass and external clock */
+  if (SetSysClock_PLL_HSE() == false) {
+    /* 2- If fail start with HSI clock */
+    if (SetSysClock_PLL_HSI() == false) {
+      Error_Handler();
+    }
+  }
+}
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
+#endif /* ARDUINO_GENERIC_* */
