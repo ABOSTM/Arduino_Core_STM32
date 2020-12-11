@@ -10,7 +10,7 @@
  *
  *******************************************************************************
  */
-#if defined(ARDUINO_AURORA_ONE)
+#if defined(ARDUINO_WRAITH32_V1)
 #ifndef _VARIANT_ARDUINO_STM32_
 #define _VARIANT_ARDUINO_STM32_
 
@@ -19,41 +19,38 @@ extern "C" {
 #endif // __cplusplus
 
 /*----------------------------------------------------------------------------
- *        STM32 pins number
+ *        Pins
  *----------------------------------------------------------------------------*/
+
 #define PA10                    0
 #define PA9                     1
-#define PA6                     A6
-#define PA7                     A7
-#define PA8                     4
-#define PC6                     5
-#define PA11                    A10
-#define PA12                    A11
-#define PB2                     A12
-#define PB1                     A9
-#define PB0                     A8
+#define PA12                    2
+#define PB0                     3
+#define PB7                     4 // RX, SDA
+#define PB6                     5 // TX, SCL
+#define PB1                     6
+#define PF0                     7
+#define PF1                     8
+#define PA8                     9
+#define PA11                    10
 #define PB5                     11
-#define PB4                     12
-#define PB3                     13 // LED
-#define PB7                     A13
-#define PB6                     15
-#define PB9                     16
-#define PB8                     17
-#define PA15                    18
-#define PA14                    A14 // SWD / BOOT0
-#define PA13                    A15 // SWD
+#define PB4                     12 // LED_BLUE
+#define PB3                     13 // LED_GREEN
 #define PA0                     A0
 #define PA1                     A1
-#define PA2                     A2
-#define PA3                     A3
-#define PA4                     A4
-#define PA5                     A5
-#define PA9_R                   27
-#define PA10_R                  28
-// #define PC14                    29 // OSC32IN
-// #define PC15                    30 // OSC32OUT
+#define PA3                     A2
+#define PA4                     A3
+#define PA5                     A4
+#define PA6                     A5
+#define PA7                     A6
+#define PA2                     21 // RC Input
+#define PA15                    22 // LED_RED
+// Pins not defined
+// PA13, PA14, PB2, PB8
 
 // Alternate pins number
+#define PA2_ALT1                (PA2 | ALT1)
+#define PA3_ALT1                (PA3 | ALT1)
 #define PA6_ALT1                (PA6 | ALT1)
 #define PA7_ALT1                (PA7 | ALT1)
 #define PA7_ALT2                (PA7 | ALT2)
@@ -61,50 +58,55 @@ extern "C" {
 #define PB0_ALT1                (PB0 | ALT1)
 #define PB1_ALT1                (PB1 | ALT1)
 #define PB1_ALT2                (PB1 | ALT2)
-#define PB6_ALT1                (PB6 | ALT1)
 
-#define NUM_DIGITAL_PINS        29
-#define NUM_REMAP_PINS          2
-#define NUM_ANALOG_INPUTS       16
+#define NUM_DIGITAL_PINS        23
+#define NUM_ANALOG_INPUTS       7
 
 // On-board LED pin number
 #ifndef LED_BUILTIN
 #define LED_BUILTIN             PB3
 #endif
 #define LED_GREEN               LED_BUILTIN
+#define LED_BLUE                PB4
+#define LED_RED                 PA15
 
 // On-board user button
 #ifndef USER_BTN
-#define USER_BTN                PA8
+#define USER_BTN                NC
+#endif
+
+// I2C Definitions
+#ifndef PIN_WIRE_SDA
+#define PIN_WIRE_SDA            PB7
+#endif
+#ifndef PIN_WIRE_SCL
+#define PIN_WIRE_SCL            PB6
 #endif
 
 // Timer Definitions
-// Use TIM6/TIM7 when possible as servo and tone don't need GPIO output pin
-#ifndef TIMER_TONE
-#define TIMER_TONE              TIM14
-#endif
 #ifndef TIMER_SERVO
-#define TIMER_SERVO             TIM16
+#define TIMER_SERVO             TIM6
 #endif
 
 // UART Definitions
 #ifndef SERIAL_UART_INSTANCE
-#define SERIAL_UART_INSTANCE    2 //Connected to Aurora Connect Lite
+#define SERIAL_UART_INSTANCE    2
 #endif
 
-// Default pin used for 'Serial' instance (ex: ST-Link)
-// Mandatory for Firmata
+// Serial Pin Firmata
 #ifndef PIN_SERIAL_RX
-#define PIN_SERIAL_RX           PA10
+#define PIN_SERIAL_RX           PB7
 #endif
 #ifndef PIN_SERIAL_TX
-#define PIN_SERIAL_TX           PA9
+#define PIN_SERIAL_TX           PB6
 #endif
+
+/* Extra HAL modules */
+#define HAL_DAC_MODULE_ENABLED
 
 #ifdef __cplusplus
 } // extern "C"
 #endif
-
 /*----------------------------------------------------------------------------
  *        Arduino objects - C++ only
  *----------------------------------------------------------------------------*/
@@ -126,8 +128,8 @@ extern "C" {
   // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
   //                            pins are NOT connected to anything by default.
   #define SERIAL_PORT_MONITOR   Serial
-  #define SERIAL_PORT_HARDWARE  Serial2
+  #define SERIAL_PORT_HARDWARE  Serial
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */
-#endif /* ARDUINO_AURORA_ONE */
+#endif /* ARDUINO_WRAITH32_V1 */

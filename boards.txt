@@ -200,7 +200,7 @@ Nucleo_64.menu.pnum.NUCLEO_F030R8.build.mcu=cortex-m0
 Nucleo_64.menu.pnum.NUCLEO_F030R8.build.board=NUCLEO_F030R8
 Nucleo_64.menu.pnum.NUCLEO_F030R8.build.series=STM32F0xx
 Nucleo_64.menu.pnum.NUCLEO_F030R8.build.product_line=STM32F030x8
-Nucleo_64.menu.pnum.NUCLEO_F030R8.build.variant=STM32F0xx/NUCLEO_F030R8
+Nucleo_64.menu.pnum.NUCLEO_F030R8.build.variant=STM32F0xx/Generic_F030R8
 Nucleo_64.menu.pnum.NUCLEO_F030R8.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # NUCLEO_F072RB board
@@ -212,7 +212,7 @@ Nucleo_64.menu.pnum.NUCLEO_F072RB.build.mcu=cortex-m0
 Nucleo_64.menu.pnum.NUCLEO_F072RB.build.board=NUCLEO_F072RB
 Nucleo_64.menu.pnum.NUCLEO_F072RB.build.series=STM32F0xx
 Nucleo_64.menu.pnum.NUCLEO_F072RB.build.product_line=STM32F072xB
-Nucleo_64.menu.pnum.NUCLEO_F072RB.build.variant=STM32F0xx/NUCLEO_F072RB
+Nucleo_64.menu.pnum.NUCLEO_F072RB.build.variant=STM32F0xx/Generic_F072Rx
 Nucleo_64.menu.pnum.NUCLEO_F072RB.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # NUCLEO_F091RC board
@@ -224,7 +224,7 @@ Nucleo_64.menu.pnum.NUCLEO_F091RC.build.mcu=cortex-m0
 Nucleo_64.menu.pnum.NUCLEO_F091RC.build.board=NUCLEO_F091RC
 Nucleo_64.menu.pnum.NUCLEO_F091RC.build.series=STM32F0xx
 Nucleo_64.menu.pnum.NUCLEO_F091RC.build.product_line=STM32F091xC
-Nucleo_64.menu.pnum.NUCLEO_F091RC.build.variant=STM32F0xx/NUCLEO_F091RC
+Nucleo_64.menu.pnum.NUCLEO_F091RC.build.variant=STM32F0xx/Generic_F091Rx
 Nucleo_64.menu.pnum.NUCLEO_F091RC.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # NUCLEO_F103RB board
@@ -484,7 +484,7 @@ Nucleo_32.menu.pnum.NUCLEO_F031K6.build.mcu=cortex-m0
 Nucleo_32.menu.pnum.NUCLEO_F031K6.build.board=NUCLEO_F031K6
 Nucleo_32.menu.pnum.NUCLEO_F031K6.build.series=STM32F0xx
 Nucleo_32.menu.pnum.NUCLEO_F031K6.build.product_line=STM32F031x6
-Nucleo_32.menu.pnum.NUCLEO_F031K6.build.variant=STM32F0xx/NUCLEO_F031K6
+Nucleo_32.menu.pnum.NUCLEO_F031K6.build.variant=STM32F0xx/Generic_F031K6T
 Nucleo_32.menu.pnum.NUCLEO_F031K6.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # NUCLEO_F303K8 board
@@ -602,7 +602,7 @@ Disco.menu.pnum.DISCO_F030R8.build.mcu=cortex-m0
 Disco.menu.pnum.DISCO_F030R8.build.board=DISCO_F030R8
 Disco.menu.pnum.DISCO_F030R8.build.series=STM32F0xx
 Disco.menu.pnum.DISCO_F030R8.build.product_line=STM32F030x8
-Disco.menu.pnum.DISCO_F030R8.build.variant=STM32F0xx/DISCO_F030R8
+Disco.menu.pnum.DISCO_F030R8.build.variant=STM32F0xx/Generic_F030R8
 Disco.menu.pnum.DISCO_F030R8.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # DISCO_F072RB board
@@ -614,7 +614,7 @@ Disco.menu.pnum.DISCO_F072RB.build.mcu=cortex-m0
 Disco.menu.pnum.DISCO_F072RB.build.board=DISCO_F072RB
 Disco.menu.pnum.DISCO_F072RB.build.series=STM32F0xx
 Disco.menu.pnum.DISCO_F072RB.build.product_line=STM32F072xB
-Disco.menu.pnum.DISCO_F072RB.build.variant=STM32F0xx/DISCO_F072RB
+Disco.menu.pnum.DISCO_F072RB.build.variant=STM32F0xx/Generic_F072Rx
 Disco.menu.pnum.DISCO_F072RB.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 #DISCO_F100RB board
@@ -821,28 +821,140 @@ GenF0.build.cmsis_lib_gcc=arm_cortexM0l_math
 GenF0.build.extra_flags=-D{build.product_line} {build.xSerial}
 
 # DEMO_F030F4 board
-GenF0.menu.pnum.DEMO_F030F4=STM32F030F4 Demo board
-GenF0.menu.pnum.DEMO_F030F4.upload.maximum_data_size=4096
+GenF0.menu.pnum.DEMO_F030F4=STM32F030F4 Demo board (HSE 8Mhz)
 GenF0.menu.pnum.DEMO_F030F4.upload.maximum_size=16384
+GenF0.menu.pnum.DEMO_F030F4.upload.maximum_data_size=4096
 GenF0.menu.pnum.DEMO_F030F4.build.board=DEMO_F030F4
 GenF0.menu.pnum.DEMO_F030F4.build.product_line=STM32F030x6
-GenF0.menu.pnum.DEMO_F030F4.build.variant=STM32F0xx/DEMO_F030F4
+GenF0.menu.pnum.DEMO_F030F4.build.variant=STM32F0xx/Generic_F030F4
 
 # DEMO_F030F4_16M board
-GenF0.menu.pnum.DEMO_F030F4_16M=STM32F030F4 Demo board (16Mhz)
-GenF0.menu.pnum.DEMO_F030F4_16M.upload.maximum_data_size=4096
+GenF0.menu.pnum.DEMO_F030F4_16M=STM32F030F4 Demo board (HSE 16Mhz)
 GenF0.menu.pnum.DEMO_F030F4_16M.upload.maximum_size=16384
+GenF0.menu.pnum.DEMO_F030F4_16M.upload.maximum_data_size=4096
 GenF0.menu.pnum.DEMO_F030F4_16M.build.board=DEMO_F030F4_16M
 GenF0.menu.pnum.DEMO_F030F4_16M.build.product_line=STM32F030x6
-GenF0.menu.pnum.DEMO_F030F4_16M.build.variant=STM32F0xx/DEMO_F030F4
+GenF0.menu.pnum.DEMO_F030F4_16M.build.variant=STM32F0xx/Generic_F030F4
 
 # DEMO_F030F4_HSI board
-GenF0.menu.pnum.DEMO_F030F4_HSI=STM32F030F4 Demo board (internal RC oscillator)
-GenF0.menu.pnum.DEMO_F030F4_HSI.upload.maximum_data_size=4096
+GenF0.menu.pnum.DEMO_F030F4_HSI=STM32F030F4 Demo board (HSI internal RC oscillator)
 GenF0.menu.pnum.DEMO_F030F4_HSI.upload.maximum_size=16384
+GenF0.menu.pnum.DEMO_F030F4_HSI.upload.maximum_data_size=4096
 GenF0.menu.pnum.DEMO_F030F4_HSI.build.board=DEMO_F030F4_HSI
 GenF0.menu.pnum.DEMO_F030F4_HSI.build.product_line=STM32F030x6
-GenF0.menu.pnum.DEMO_F030F4_HSI.build.variant=STM32F0xx/DEMO_F030F4
+GenF0.menu.pnum.DEMO_F030F4_HSI.build.variant=STM32F0xx/Generic_F030F4
+
+# Generic F030C8
+GenF0.menu.pnum.GENERIC_F030C8=Generic F030C8
+GenF0.menu.pnum.GENERIC_F030C8.upload.maximum_size=65536
+GenF0.menu.pnum.GENERIC_F030C8.upload.maximum_data_size=8192
+GenF0.menu.pnum.GENERIC_F030C8.build.board=GENERIC_F030C8
+GenF0.menu.pnum.GENERIC_F030C8.build.product_line=STM32F030x8
+GenF0.menu.pnum.GENERIC_F030C8.build.variant=STM32F0xx/Generic_F030C8
+
+# Generic F030F4 board
+GenF0.menu.pnum.GENERIC_F030F4=Generic F030F4
+GenF0.menu.pnum.GENERIC_F030F4.upload.maximum_size=16384
+GenF0.menu.pnum.GENERIC_F030F4.upload.maximum_data_size=4096
+GenF0.menu.pnum.GENERIC_F030F4.build.board=GENERIC_F030F4
+GenF0.menu.pnum.GENERIC_F030F4.build.product_line=STM32F030x6
+GenF0.menu.pnum.GENERIC_F030F4.build.variant=STM32F0xx/Generic_F030F4
+
+# Generic F030R8
+GenF0.menu.pnum.GENERIC_F030R8=Generic F030R8
+GenF0.menu.pnum.GENERIC_F030R8.upload.maximum_size=65536
+GenF0.menu.pnum.GENERIC_F030R8.upload.maximum_data_size=8192
+GenF0.menu.pnum.GENERIC_F030R8.build.board=GENERIC_F030R8
+GenF0.menu.pnum.GENERIC_F030R8.build.product_line=STM32F030x8
+GenF0.menu.pnum.GENERIC_F030R8.build.variant=STM32F0xx/Generic_F030R8
+
+# Generic F031K6T
+GenF0.menu.pnum.GENERIC_F031K6T=Generic F031K6T
+GenF0.menu.pnum.GENERIC_F031K6T.upload.maximum_size=32768
+GenF0.menu.pnum.GENERIC_F031K6T.upload.maximum_data_size=4096
+GenF0.menu.pnum.GENERIC_F031K6T.build.board=GENERIC_F031K6T
+GenF0.menu.pnum.GENERIC_F031K6T.build.product_line=STM32F031x6
+GenF0.menu.pnum.GENERIC_F031K6T.build.variant=STM32F0xx/Generic_F031K6T
+
+# Generic F051K4U
+GenF0.menu.pnum.GENERIC_F051K4U=Generic F051K4U
+GenF0.menu.pnum.GENERIC_F051K4U.upload.maximum_size=16384
+GenF0.menu.pnum.GENERIC_F051K4U.upload.maximum_data_size=8192
+GenF0.menu.pnum.GENERIC_F051K4U.build.board=GENERIC_F051K4U
+GenF0.menu.pnum.GENERIC_F051K4U.build.product_line=STM32F051x8
+GenF0.menu.pnum.GENERIC_F051K4U.build.variant=STM32F0xx/Generic_F051KxU
+
+# Generic F051K6U
+GenF0.menu.pnum.GENERIC_F051K6U=Generic F051K6U
+GenF0.menu.pnum.GENERIC_F051K6U.upload.maximum_size=32768
+GenF0.menu.pnum.GENERIC_F051K6U.upload.maximum_data_size=8192
+GenF0.menu.pnum.GENERIC_F051K6U.build.board=GENERIC_F051K6U
+GenF0.menu.pnum.GENERIC_F051K6U.build.product_line=STM32F051x8
+GenF0.menu.pnum.GENERIC_F051K6U.build.variant=STM32F0xx/Generic_F051KxU
+
+# Generic F051K8U
+GenF0.menu.pnum.GENERIC_F051K8U=Generic F051K8U
+GenF0.menu.pnum.GENERIC_F051K8U.upload.maximum_size=65536
+GenF0.menu.pnum.GENERIC_F051K8U.upload.maximum_data_size=8192
+GenF0.menu.pnum.GENERIC_F051K8U.build.board=GENERIC_F051K8U
+GenF0.menu.pnum.GENERIC_F051K8U.build.product_line=STM32F051x8
+GenF0.menu.pnum.GENERIC_F051K8U.build.variant=STM32F0xx/Generic_F051KxU
+
+# Generic F070CB
+GenF0.menu.pnum.GENERIC_F070CB=Generic F070CB
+GenF0.menu.pnum.GENERIC_F070CB.upload.maximum_size=122880
+GenF0.menu.pnum.GENERIC_F070CB.upload.maximum_data_size=16384
+GenF0.menu.pnum.GENERIC_F070CB.build.board=GENERIC_F070CB
+GenF0.menu.pnum.GENERIC_F070CB.build.product_line=STM32F070xB
+GenF0.menu.pnum.GENERIC_F070CB.build.variant=STM32F0xx/Generic_F070CB
+
+# Generic F072C8
+GenF0.menu.pnum.GENERIC_F072C8=Generic F072C8
+GenF0.menu.pnum.GENERIC_F072C8.upload.maximum_size=65536
+GenF0.menu.pnum.GENERIC_F072C8.upload.maximum_data_size=16384
+GenF0.menu.pnum.GENERIC_F072C8.build.board=GENERIC_F072C8
+GenF0.menu.pnum.GENERIC_F072C8.build.product_line=STM32F072xB
+GenF0.menu.pnum.GENERIC_F072C8.build.variant=STM32F0xx/Generic_F072Cx
+
+# Generic F072CB
+GenF0.menu.pnum.GENERIC_F072CB=Generic F072CB
+GenF0.menu.pnum.GENERIC_F072CB.upload.maximum_size=131072
+GenF0.menu.pnum.GENERIC_F072CB.upload.maximum_data_size=16384
+GenF0.menu.pnum.GENERIC_F072CB.build.board=GENERIC_F072CB
+GenF0.menu.pnum.GENERIC_F072CB.build.product_line=STM32F072xB
+GenF0.menu.pnum.GENERIC_F072CB.build.variant=STM32F0xx/Generic_F072Cx
+
+# Generic F072R8
+GenF0.menu.pnum.GENERIC_F072R8=Generic F072R8
+GenF0.menu.pnum.GENERIC_F072R8.upload.maximum_size=65536
+GenF0.menu.pnum.GENERIC_F072R8.upload.maximum_data_size=16384
+GenF0.menu.pnum.GENERIC_F072R8.build.board=GENERIC_F072R8
+GenF0.menu.pnum.GENERIC_F072R8.build.product_line=STM32F072xB
+GenF0.menu.pnum.GENERIC_F072R8.build.variant=STM32F0xx/Generic_F072Rx
+
+# Generic F072RB
+GenF0.menu.pnum.Generic_F072RB=Generic F072RB
+GenF0.menu.pnum.Generic_F072RB.upload.maximum_size=131072
+GenF0.menu.pnum.Generic_F072RB.upload.maximum_data_size=16384
+GenF0.menu.pnum.Generic_F072RB.build.board=GENERIC_F072RB
+GenF0.menu.pnum.Generic_F072RB.build.product_line=STM32F072xB
+GenF0.menu.pnum.Generic_F072RB.build.variant=STM32F0xx/Generic_F072Rx
+
+# Generic F091RB
+GenF0.menu.pnum.Generic_F091RB=Generic F091RB
+GenF0.menu.pnum.Generic_F091RB.upload.maximum_size=131072
+GenF0.menu.pnum.Generic_F091RB.upload.maximum_data_size=32768
+GenF0.menu.pnum.Generic_F091RB.build.board=GENERIC_F091RB
+GenF0.menu.pnum.Generic_F091RB.build.product_line=STM32F091xC
+GenF0.menu.pnum.Generic_F091RB.build.variant=STM32F0xx/Generic_F091Rx
+
+# Generic F091RC
+GenF0.menu.pnum.Generic_F091RC=Generic F091RC
+GenF0.menu.pnum.Generic_F091RC.upload.maximum_size=262144
+GenF0.menu.pnum.Generic_F091RC.upload.maximum_data_size=32768
+GenF0.menu.pnum.Generic_F091RC.build.board=GENERIC_F091RC
+GenF0.menu.pnum.Generic_F091RC.build.product_line=STM32F091xC
+GenF0.menu.pnum.Generic_F091RC.build.variant=STM32F0xx/Generic_F091Rx
 
 # Upload menu
 GenF0.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
@@ -2057,16 +2169,16 @@ ESC_board.build.core=arduino
 ESC_board.build.board=FCE_board
 ESC_board.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
 
-# Wraith32_V1 board
-ESC_board.menu.pnum.Wraith32_V1=Wraith V1 ESC
-ESC_board.menu.pnum.Wraith32_V1.upload.maximum_size=32768
-ESC_board.menu.pnum.Wraith32_V1.upload.maximum_data_size=7936
-ESC_board.menu.pnum.Wraith32_V1.build.mcu=cortex-m0
-ESC_board.menu.pnum.Wraith32_V1.build.board=Wraith32_V1
-ESC_board.menu.pnum.Wraith32_V1.build.series=STM32F0xx
-ESC_board.menu.pnum.Wraith32_V1.build.product_line=STM32F051x8
-ESC_board.menu.pnum.Wraith32_V1.build.variant=STM32F0xx/WRAITH32_F051K6
-ESC_board.menu.pnum.Wraith32_V1.build.cmsis_lib_gcc=arm_cortexM0l_math
+# WRAITH32_V1 board
+ESC_board.menu.pnum.WRAITH32_V1=Wraith V1 ESC
+ESC_board.menu.pnum.WRAITH32_V1.upload.maximum_size=32768
+ESC_board.menu.pnum.WRAITH32_V1.upload.maximum_data_size=7936
+ESC_board.menu.pnum.WRAITH32_V1.build.mcu=cortex-m0
+ESC_board.menu.pnum.WRAITH32_V1.build.board=WRAITH32_V1
+ESC_board.menu.pnum.WRAITH32_V1.build.series=STM32F0xx
+ESC_board.menu.pnum.WRAITH32_V1.build.product_line=STM32F051x8
+ESC_board.menu.pnum.WRAITH32_V1.build.variant=STM32F0xx/Generic_F051KxU
+ESC_board.menu.pnum.WRAITH32_V1.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # Upload menu
 ESC_board.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
@@ -2133,7 +2245,7 @@ LoRa.menu.pnum.ELEKTOR_F072C8.build.mcu=cortex-m0
 LoRa.menu.pnum.ELEKTOR_F072C8.build.board=ELEKTOR_F072C8
 LoRa.menu.pnum.ELEKTOR_F072C8.build.series=STM32F0xx
 LoRa.menu.pnum.ELEKTOR_F072C8.build.product_line=STM32F072xB
-LoRa.menu.pnum.ELEKTOR_F072C8.build.variant=STM32F0xx/ELEKTOR_F072Cx
+LoRa.menu.pnum.ELEKTOR_F072C8.build.variant=STM32F0xx/Generic_F072Cx
 LoRa.menu.pnum.ELEKTOR_F072C8.build.cmsis_lib_gcc=arm_cortexM0l_math
 LoRa.menu.pnum.ELEKTOR_F072C8.build.extra_flags=-D{build.product_line} {build.xSerial}
 
@@ -2145,7 +2257,7 @@ LoRa.menu.pnum.ELEKTOR_F072CB.build.mcu=cortex-m0
 LoRa.menu.pnum.ELEKTOR_F072CB.build.board=ELEKTOR_F072CB
 LoRa.menu.pnum.ELEKTOR_F072CB.build.series=STM32F0xx
 LoRa.menu.pnum.ELEKTOR_F072CB.build.product_line=STM32F072xB
-LoRa.menu.pnum.ELEKTOR_F072CB.build.variant=STM32F0xx/ELEKTOR_F072Cx
+LoRa.menu.pnum.ELEKTOR_F072CB.build.variant=STM32F0xx/Generic_F072Cx
 LoRa.menu.pnum.ELEKTOR_F072CB.build.cmsis_lib_gcc=arm_cortexM0l_math
 LoRa.menu.pnum.ELEKTOR_F072CB.build.extra_flags=-D{build.product_line} {build.xSerial}
 
@@ -2256,7 +2368,7 @@ LoRa.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 3dprinter.menu.pnum.EEXTR_F030_V1.build.board=EEXTR_F030_V1
 3dprinter.menu.pnum.EEXTR_F030_V1.build.series=STM32F0xx
 3dprinter.menu.pnum.EEXTR_F030_V1.build.product_line=STM32F030x8
-3dprinter.menu.pnum.EEXTR_F030_V1.build.variant=STM32F0xx/EEXTR_F030_V1
+3dprinter.menu.pnum.EEXTR_F030_V1.build.variant=STM32F0xx/Generic_F030C8
 3dprinter.menu.pnum.EEXTR_F030_V1.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # MALYANM200_F103CB board
@@ -2281,9 +2393,10 @@ LoRa.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 3dprinter.menu.pnum.MALYANM200_F070CB.build.board=MALYANM200_F070CB
 3dprinter.menu.pnum.MALYANM200_F070CB.build.series=STM32F0xx
 3dprinter.menu.pnum.MALYANM200_F070CB.build.product_line=STM32F070xB
-3dprinter.menu.pnum.MALYANM200_F070CB.build.variant=STM32F0xx/MALYANMx00_F070CB
+3dprinter.menu.pnum.MALYANM200_F070CB.build.variant=STM32F0xx/Generic_F070CB
 3dprinter.menu.pnum.MALYANM200_F070CB.build.cmsis_lib_gcc=arm_cortexM0l_math
 3dprinter.menu.pnum.MALYANM200_F070CB.build.startup_file=-DCUSTOM_STARTUP_FILE
+3dprinter.menu.pnum.MALYANM200_F070CB.build.ldscript=MALYANMx00_F070CB.ld
 3dprinter.menu.pnum.MALYANM200_F070CB.build.flash_offset=0x2000
 3dprinter.menu.pnum.MALYANM200_F070CB.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DVECT_TAB_OFFSET={build.flash_offset}
 
@@ -2295,9 +2408,10 @@ LoRa.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 3dprinter.menu.pnum.MALYANM300_F070CB.build.board=MALYANM300_F070CB
 3dprinter.menu.pnum.MALYANM300_F070CB.build.series=STM32F0xx
 3dprinter.menu.pnum.MALYANM300_F070CB.build.product_line=STM32F070xB
-3dprinter.menu.pnum.MALYANM300_F070CB.build.variant=STM32F0xx/MALYANMx00_F070CB
+3dprinter.menu.pnum.MALYANM300_F070CB.build.variant=STM32F0xx/Generic_F070CB
 3dprinter.menu.pnum.MALYANM300_F070CB.build.cmsis_lib_gcc=arm_cortexM0l_math
 3dprinter.menu.pnum.MALYANM300_F070CB.build.startup_file=-DCUSTOM_STARTUP_FILE
+3dprinter.menu.pnum.MALYANM200_F070CB.build.ldscript=MALYANMx00_F070CB.ld
 3dprinter.menu.pnum.MALYANM300_F070CB.build.flash_offset=0x2000
 3dprinter.menu.pnum.MALYANM300_F070CB.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -DVECT_TAB_OFFSET={build.flash_offset}
 
@@ -2445,7 +2559,7 @@ Garatronic.menu.pnum.PYBSTICK26_DUINO.build.mcu=cortex-m0
 Garatronic.menu.pnum.PYBSTICK26_DUINO.build.board=PYBSTICK26_DUINO
 Garatronic.menu.pnum.PYBSTICK26_DUINO.build.series=STM32F0xx
 Garatronic.menu.pnum.PYBSTICK26_DUINO.build.product_line=STM32F072xB
-Garatronic.menu.pnum.PYBSTICK26_DUINO.build.variant=STM32F0xx/PYBSTICK26_DUINO
+Garatronic.menu.pnum.PYBSTICK26_DUINO.build.variant=STM32F0xx/Generic_F072Rx
 Garatronic.menu.pnum.PYBSTICK26_DUINO.build.cmsis_lib_gcc=arm_cortexM0l_math
 
 # PYBSTICK26(LITE) board with F401CE
