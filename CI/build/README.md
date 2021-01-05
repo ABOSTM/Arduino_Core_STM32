@@ -3,7 +3,7 @@
 This script manages _[arduino-builder](https://github.com/arduino/arduino-builder)_ command line tool for compiling Arduino sketch(es).
 
 ## Requirements
-- [Arduino IDE](https://www.arduino.cc/en/Main/Software) (_[arduino-builder](https://github.com/arduino/arduino-builder)_ is included) 
+- [Arduino IDE](https://www.arduino.cc/en/Main/Software) (_[arduino-builder](https://github.com/arduino/arduino-builder)_ is included)
 - Python version greater than or equal to  3.2 (due to `concurrent.futures` usage)
 
 ## Usage
@@ -55,7 +55,7 @@ Sketch(es) options:
 
 ## Cores configuration files
 
-Script is able to uses a JSON configuration file containing the build configuration for one or more maintainer/architecture. 
+Script is able to uses a JSON configuration file containing the build configuration for one or more maintainer/architecture.
 A default configuration file is provided: [cores_config.json](conf/cores_config.json)
 
 
@@ -135,7 +135,7 @@ Will build all sketches available in  `09.USB/*` for the listed boards and add `
   {
     "pattern": "09.USB",
     "applicable": true,
-    "boards": [ "NUCLEO_F429ZI", "DISCO_L475VG_IOT", "DISCO_F407VG" ],
+    "boards": [ "NUCLEO_F429ZI", "B_L475E_IOT01A", "DISCO_F407VG" ],
     "options": "usb=HID"
   }
 ```
@@ -153,7 +153,7 @@ Build configuration for 'STM32' maintainer and 'stm32' architecture
 9 board(s) available
 BLUEPILL_F103C8
 DISCO_F100RB
-DISCO_L475VG_IOT
+B_L475E_IOT01A
 MAPLEMINI_F103CB
 NUCLEO_F103RB
 NUCLEO_L432KC
@@ -194,7 +194,7 @@ Build configuration for 'STM32' maintainer and 'stm32' architecture
 
 * Build all sketches containing `digital` or `analog` for all boards containing `F1` or `L4` (not case sensitive):
 
-`python3 arduino-builder.py -s "Digital|analog" -b "F1|l4"` 
+`python3 arduino-builder.py -s "Digital|analog" -b "F1|l4"`
 
 * List all boards for STM32F1 core:
 

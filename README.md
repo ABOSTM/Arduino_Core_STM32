@@ -57,6 +57,7 @@ User can add a STM32 based board following this [wiki](https://github.com/stm32d
  - [Generic STM32F4 boards](#generic-stm32f4-boards)
  - [Generic STM32H7 boards](#generic-stm32h7-boards)
  - [Generic STM32L0 boards](#generic-stm32l0-boards)
+ - [Generic STM32L4 boards](#generic-stm32l4-boards)
  - [3D printer boards](#3d-printer-boards)
  - [LoRa boards](#lora-boards)
  - [Electronic Speed Controller boards](#electronic-speed-controller-boards)
@@ -216,6 +217,24 @@ User can add a STM32 based board following this [wiki](https://github.com/stm32d
 | :----: | :-------: | ---- | :-----: | :---- |
 | :green_heart: | STM32L072RB | [PX-HER0](https://piconomix.com/fwlib/_p_i_c_o_n_o_m_i_x__s_t_m32__h_e_r_o__b_o_a_r_d.html) | *1.8.0* |  |
 | :green_heart: | STM32L072KZ | [ThunderPack v1.0](https://github.com/jgillick/ThunderPack) | *1.8.0* |  |
+
+### Generic STM32L4 boards
+
+| Status | Device(s) | Name | Release | Notes |
+| :----: | :-------: | ---- | :-----: | :---- |
+| :yellow_heart:  | STM32L412KB | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L432KB<br>STM32L432KC | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L433RC-P | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L452RC<br>STM32L456RE | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L456RE-P | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L475VC<br>STM32L475VE<br>STM32L475VG | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L476RC<br>STM32L476RE<br>STM32L476RG | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L496ZE<br>STM32L496ZG | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L496ZG-P | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L4R5ZGT<br>STM32L4R5ZIT | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L4R5ZI-P | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L4R9ZGJ<br>STM32L4R9ZIJ | Generic Board | **2.0.0** |  |
+| :yellow_heart:  | STM32L4S5VI | Generic Board | **2.0.0** |  |
 
 ### 3D printer boards
 
