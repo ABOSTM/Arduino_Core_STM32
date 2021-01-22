@@ -500,6 +500,19 @@ Nucleo_32.menu.pnum.NUCLEO_F303K8.build.product_line=STM32F303x8
 Nucleo_32.menu.pnum.NUCLEO_F303K8.build.variant=STM32F3xx/NUCLEO_F303K8
 Nucleo_32.menu.pnum.NUCLEO_F303K8.build.cmsis_lib_gcc=arm_cortexM4lf_math
 
+# NUCLEO_G031K8 board
+Nucleo_32.menu.pnum.NUCLEO_G031K8=Nucleo G031K8
+Nucleo_32.menu.pnum.NUCLEO_G031K8.node=NOD_G031K8
+Nucleo_32.menu.pnum.NUCLEO_G031K8.upload.maximum_size=65536
+Nucleo_32.menu.pnum.NUCLEO_G031K8.upload.maximum_data_size=8192
+Nucleo_32.menu.pnum.NUCLEO_G031K8.build.mcu=cortex-m0plus
+Nucleo_32.menu.pnum.NUCLEO_G031K8.build.board=NUCLEO_G031K8
+Nucleo_32.menu.pnum.NUCLEO_G031K8.build.series=STM32G0xx
+Nucleo_32.menu.pnum.NUCLEO_G031K8.build.product_line=STM32G031xx
+Nucleo_32.menu.pnum.NUCLEO_G031K8.build.variant=STM32G0xx/Generic_G031Kx
+Nucleo_32.menu.pnum.NUCLEO_G031K8.build.cmsis_lib_gcc=arm_cortexM0l_math
+Nucleo_32.menu.pnum.NUCLEO_G031K8.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial} -D__CORTEX_SC=0
+
 # NUCLEO_L031K6 board
 Nucleo_32.menu.pnum.NUCLEO_L031K6=Nucleo L031K6
 Nucleo_32.menu.pnum.NUCLEO_L031K6.node=NODE_L031K6
@@ -1683,6 +1696,30 @@ GenG0.menu.pnum.GENERIC_G031J6.upload.maximum_data_size=8192
 GenG0.menu.pnum.GENERIC_G031J6.build.board=GENERIC_G031J6
 GenG0.menu.pnum.GENERIC_G031J6.build.product_line=STM32G031xx
 GenG0.menu.pnum.GENERIC_G031J6.build.variant=STM32G0xx/Generic_G031Jx
+
+# Generic G031K4
+GenG0.menu.pnum.GENERIC_G031K4=Generic G031K4
+GenG0.menu.pnum.GENERIC_G031K4.upload.maximum_size=16384
+GenG0.menu.pnum.GENERIC_G031K4.upload.maximum_data_size=8192
+GenG0.menu.pnum.GENERIC_G031K4.build.board=GENERIC_G031K4
+GenG0.menu.pnum.GENERIC_G031K4.build.product_line=STM32G031xx
+GenG0.menu.pnum.GENERIC_G031K4.build.variant=STM32G0xx/Generic_G031Kx
+
+# Generic G031K6
+GenG0.menu.pnum.GENERIC_G031K6=Generic G031K6
+GenG0.menu.pnum.GENERIC_G031K6.upload.maximum_size=32768
+GenG0.menu.pnum.GENERIC_G031K6.upload.maximum_data_size=8192
+GenG0.menu.pnum.GENERIC_G031K6.build.board=GENERIC_G031K6
+GenG0.menu.pnum.GENERIC_G031K6.build.product_line=STM32G031xx
+GenG0.menu.pnum.GENERIC_G031K6.build.variant=STM32G0xx/Generic_G031Kx
+
+# Generic G031K8
+GenG0.menu.pnum.GENERIC_G031K8=Generic G031K8
+GenG0.menu.pnum.GENERIC_G031K8.upload.maximum_size=65536
+GenG0.menu.pnum.GENERIC_G031K8.upload.maximum_data_size=8192
+GenG0.menu.pnum.GENERIC_G031K8.build.board=GENERIC_G031K8
+GenG0.menu.pnum.GENERIC_G031K8.build.product_line=STM32G031xx
+GenG0.menu.pnum.GENERIC_G031K8.build.variant=STM32G0xx/Generic_G031Kx
 
 # Generic G071R6
 GenG0.menu.pnum.GENERIC_G071R6=Generic G071R6
