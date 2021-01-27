@@ -786,7 +786,6 @@ Eval.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 
 ################################################################################
 # STM32MP1 microprocessor series (MPU + MCU)
-
 STM32MP1.name=STM32MP1 series coprocessor
 
 STM32MP1.build.core=arduino
@@ -803,7 +802,7 @@ STM32MP1.menu.pnum.STM32MP157A_DK1.upload.maximum_size=131072
 STM32MP1.menu.pnum.STM32MP157A_DK1.upload.maximum_data_size=131072
 STM32MP1.menu.pnum.STM32MP157A_DK1.build.board=STM32MP157A_DK1
 STM32MP1.menu.pnum.STM32MP157A_DK1.build.product_line=STM32MP157Axx
-STM32MP1.menu.pnum.STM32MP157A_DK1.build.variant=STM32MP1xx/STM32MP157_DK
+STM32MP1.menu.pnum.STM32MP157A_DK1.build.variant=STM32MP1xx/STM32MP157xACx
 
 # STM32MP157C-DK2 board
 STM32MP1.menu.pnum.STM32MP157C_DK2=STM32MP157C-DK2
@@ -811,15 +810,12 @@ STM32MP1.menu.pnum.STM32MP157C_DK2.upload.maximum_size=131072
 STM32MP1.menu.pnum.STM32MP157C_DK2.upload.maximum_data_size=131072
 STM32MP1.menu.pnum.STM32MP157C_DK2.build.board=STM32MP157C_DK2
 STM32MP1.menu.pnum.STM32MP157C_DK2.build.product_line=STM32MP157Cxx
-STM32MP1.menu.pnum.STM32MP157C_DK2.build.variant=STM32MP1xx/STM32MP157_DK
+STM32MP1.menu.pnum.STM32MP157C_DK2.build.variant=STM32MP1xx/STM32MP157xACx
 
 # Upload menu
 STM32MP1.menu.upload_method.MassStorage=Generate run_arduino.sh (You need to copy this manually)
 STM32MP1.menu.upload_method.MassStorage.upload.protocol=
 STM32MP1.menu.upload_method.MassStorage.upload.tool=remoteproc_gen
-
-################################################################################
-# Other boards
 
 ###############################
 # Generic F0
@@ -2196,6 +2192,39 @@ GenL4.menu.upload_method.dfuMethod.upload.protocol=2
 GenL4.menu.upload_method.dfuMethod.upload.options=-g
 GenL4.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
 
+#################################################################################
+## Generic MP1 microprocessor series (MPU + MCU)
+#GenMP1.name=Generic STM32MP1 series coprocessor
+#
+#GenMP1.build.core=arduino
+#GenMP1.build.board=GenMP1
+#GenMP1.build.mcu=cortex-m4
+#GenMP1.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+#GenMP1.build.series=STM32MP1xx
+#GenMP1.build.cmsis_lib_gcc=arm_cortexM4l_math
+#GenMP1.build.extra_flags=-DCORE_CM4 -DUSE_FULL_LL_DRIVER -D{build.product_line} {build.enable_virtio} {build.xSerial}
+#
+## Generic MP157AAC board
+#GenMP1.menu.pnum.GENERIC_MP157AAC=Generic MP157AAC
+#GenMP1.menu.pnum.GENERIC_MP157AAC.upload.maximum_size=131072
+#GenMP1.menu.pnum.GENERIC_MP157AAC.upload.maximum_data_size=131072
+#GenMP1.menu.pnum.GENERIC_MP157AAC.build.board=GENERIC_MP157AAC
+#GenMP1.menu.pnum.GENERIC_MP157AAC.build.product_line=STM32MP157Axx
+#GenMP1.menu.pnum.GENERIC_MP157AAC.build.variant=STM32MP1xx/STM32MP157xACx
+#
+## Generic MP157CAC board
+#GenMP1.menu.pnum.GENERIC_MP157CAC=Generic MP157CAC
+#GenMP1.menu.pnum.GENERIC_MP157CAC.upload.maximum_size=131072
+#GenMP1.menu.pnum.GENERIC_MP157CAC.upload.maximum_data_size=131072
+#GenMP1.menu.pnum.GENERIC_MP157CAC.build.board=GENERIC_MP157CAC
+#GenMP1.menu.pnum.GENERIC_MP157CAC.build.product_line=STM32MP157Cxx
+#GenMP1.menu.pnum.GENERIC_MP157CAC.build.variant=STM32MP1xx/STM32MP157xACx
+#
+## Upload menu
+#GenMP1.menu.upload_method.MassStorage=Generate run_arduino.sh (You need to copy this manually)
+#GenMP1.menu.upload_method.MassStorage.upload.protocol=
+#GenMP1.menu.upload_method.MassStorage.upload.tool=remoteproc_gen
+
 ################################################################################
 # Electronic Speed Controller boards
 
@@ -2776,6 +2805,20 @@ GenL4.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
 GenL4.menu.xserial.disabled=Disabled (no Serial support)
 GenL4.menu.xserial.disabled.build.xSerial=
 
+#GenMP1.menu.virtio.disable=Disabled (no SerialVirtIO nor /dev/ttyRPMSG0 available)
+#GenMP1.menu.virtio.disable.build.enable_virtio=
+#GenMP1.menu.virtio.generic=SerialVirtIO (= generic 'Serial') <=> /dev/ttyRPMSG0
+#GenMP1.menu.virtio.generic.build.enable_virtio={build.virtio_flags}
+#GenMP1.menu.virtio.enabled=SerialVirtIO <=> /dev/ttyRPMSG0
+#GenMP1.menu.virtio.enabled.build.enable_virtio={build.virtio_flags} -DDISABLE_GENERIC_SERIALVIRTIO
+
+#GenMP1.menu.xserial.generic=UART only (generic 'Serial')
+#GenMP1.menu.xserial.generic.build.xSerial=-DHAL_UART_MODULE_ENABLED
+#GenMP1.menu.xserial.none=UART only (no generic 'Serial')
+#GenMP1.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
+#GenMP1.menu.xserial.disabled=Disabled (no Serial support)
+#GenMP1.menu.xserial.disabled.build.xSerial=
+
 ESC_board.menu.xserial.generic=Enabled (generic 'Serial')
 ESC_board.menu.xserial.none=Enabled (no generic 'Serial')
 ESC_board.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
@@ -3258,6 +3301,24 @@ GenL4.menu.opt.o3lto.build.flags.optimize=-O3 -flto
 GenL4.menu.opt.ogstd=Debug (-g)
 GenL4.menu.opt.ogstd.build.flags.optimize=-g -Og
 
+#GenMP1.menu.opt.osstd=Smallest (-Os default)
+#GenMP1.menu.opt.oslto=Smallest (-Os) with LTO
+#GenMP1.menu.opt.oslto.build.flags.optimize=-Os -flto
+#GenMP1.menu.opt.o1std=Fast (-O1)
+#GenMP1.menu.opt.o1std.build.flags.optimize=-O1
+#GenMP1.menu.opt.o1lto=Fast (-O1) with LTO
+#GenMP1.menu.opt.o1lto.build.flags.optimize=-O1 -flto
+#GenMP1.menu.opt.o2std=Faster (-O2)
+#GenMP1.menu.opt.o2std.build.flags.optimize=-O2
+#GenMP1.menu.opt.o2lto=Faster (-O2) with LTO
+#GenMP1.menu.opt.o2lto.build.flags.optimize=-O2 -flto
+#GenMP1.menu.opt.o3std=Fastest (-O3)
+#GenMP1.menu.opt.o3std.build.flags.optimize=-O3
+#GenMP1.menu.opt.o3lto=Fastest (-O3) with LTO
+#GenMP1.menu.opt.o3lto.build.flags.optimize=-O3 -flto
+#GenMP1.menu.opt.ogstd=Debug (-g)
+#GenMP1.menu.opt.ogstd.build.flags.optimize=-g -Og
+
 ESC_board.menu.opt.osstd=Smallest (-Os default)
 ESC_board.menu.opt.oslto=Smallest (-Os) with LTO
 ESC_board.menu.opt.oslto.build.flags.optimize=-Os -flto
@@ -3506,6 +3567,16 @@ GenL4.menu.rtlib.nanofps=Newlib Nano + Float Printf/Scanf
 GenL4.menu.rtlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
 GenL4.menu.rtlib.full=Newlib Standard
 GenL4.menu.rtlib.full.build.flags.ldspecs=
+
+#GenMP1.menu.rtlib.nano=Newlib Nano (default)
+#GenMP1.menu.rtlib.nanofp=Newlib Nano + Float Printf
+#GenMP1.menu.rtlib.nanofp.build.flags.ldspecs=--specs=nano.specs -u _printf_float
+#GenMP1.menu.rtlib.nanofs=Newlib Nano + Float Scanf
+#GenMP1.menu.rtlib.nanofs.build.flags.ldspecs=--specs=nano.specs -u _scanf_float
+#GenMP1.menu.rtlib.nanofps=Newlib Nano + Float Printf/Scanf
+#GenMP1.menu.rtlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
+#GenMP1.menu.rtlib.full=Newlib Standard
+#GenMP1.menu.rtlib.full.build.flags.ldspecs=
 
 ESC_board.menu.rtlib.nano=Newlib Nano (default)
 ESC_board.menu.rtlib.nanofp=Newlib Nano + Float Printf
