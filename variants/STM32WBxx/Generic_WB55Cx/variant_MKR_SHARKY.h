@@ -1,21 +1,16 @@
 /*
-  Copyright (c) 2011 Arduino.  All right reserved.
-
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Lesser General Public License for more details.
-
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
+ *******************************************************************************
+ * Copyright (c) 2021, STMicroelectronics
+ * All rights reserved.
+ *
+ * This software component is licensed by ST under BSD 3-Clause license,
+ * the "License"; You may not use this file except in compliance with the
+ * License. You may obtain a copy of the License at:
+ *                        opensource.org/licenses/BSD-3-Clause
+ *
+ *******************************************************************************
+ */
+#if defined(ARDUINO_MKR_SHARKY)
 #ifndef _VARIANT_ARDUINO_STM32_
 #define _VARIANT_ARDUINO_STM32_
 
@@ -29,8 +24,8 @@ extern "C" {
 
 #define PB0  0
 #define PB1  1
-#define PA8  2
-#define PA9  3
+#define PA8  A8
+#define PA9  A9
 #define PA10 4
 #define PA15 5
 #define PE4  6
@@ -53,10 +48,13 @@ extern "C" {
 #define PA6  A6
 #define PA7  A7 // VBAT sense
 
-// This must be a literal
+// Alternate pins number
+#define PA7_ALT1                (PA7 | ALT1)
+#define PB8_ALT1                (PB8 | ALT1)
+#define PB9_ALT1                (PB9 | ALT1)
+
 #define NUM_DIGITAL_PINS        24
-// This must be a literal with a value less than or equal to to MAX_ANALOG_INPUTS
-#define NUM_ANALOG_INPUTS       8
+#define NUM_ANALOG_INPUTS       10
 
 // On-board LED pin number
 #define LED                     PE4
@@ -128,3 +126,4 @@ extern "C" {
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */
+#endif /* ARDUINO_MKR_SHARKY */
