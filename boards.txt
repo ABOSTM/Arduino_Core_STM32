@@ -402,7 +402,7 @@ Nucleo_64.menu.pnum.NUCLEO_L152RE.build.mcu=cortex-m3
 Nucleo_64.menu.pnum.NUCLEO_L152RE.build.board=NUCLEO_L152RE
 Nucleo_64.menu.pnum.NUCLEO_L152RE.build.series=STM32L1xx
 Nucleo_64.menu.pnum.NUCLEO_L152RE.build.product_line=STM32L152xE
-Nucleo_64.menu.pnum.NUCLEO_L152RE.build.variant=STM32L1xx/NUCLEO_L152RE
+Nucleo_64.menu.pnum.NUCLEO_L152RE.build.variant=STM32L1xx/Generic_L152RE
 Nucleo_64.menu.pnum.NUCLEO_L152RE.build.cmsis_lib_gcc=arm_cortexM3l_math
 
 # NUCLEO_L433RC_P board
@@ -2060,6 +2060,89 @@ GenL0.menu.upload_method.bmpMethod.upload.protocol=gdb_bmp
 GenL0.menu.upload_method.bmpMethod.upload.tool=bmp_upload
 
 ################################################################################
+# Generic L1
+GenL1.name=Generic STM32L1 series
+
+GenL1.build.core=arduino
+GenL1.build.board=GenL1
+GenL1.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
+GenL1.build.mcu=cortex-m3
+GenL1.build.series=STM32L1xx
+GenL1.build.cmsis_lib_gcc=arm_cortexM3l_math
+
+# Generic L151C6 board
+GenL1.menu.pnum.GENERIC_L151C6=Generic L151C6
+GenL1.menu.pnum.GENERIC_L151C6.upload.maximum_size=32768
+GenL1.menu.pnum.GENERIC_L151C6.upload.maximum_data_size=10240
+GenL1.menu.pnum.GENERIC_L151C6.build.board=GENERIC_L151C6
+GenL1.menu.pnum.GENERIC_L151C6.build.product_line=STM32L151xB
+GenL1.menu.pnum.GENERIC_L151C6.build.variant=STM32L1xx/Generic_L151Cx
+
+# Generic L151C8 board
+GenL1.menu.pnum.GENERIC_L151C8=Generic L151C8
+GenL1.menu.pnum.GENERIC_L151C8.upload.maximum_size=65536
+GenL1.menu.pnum.GENERIC_L151C8.upload.maximum_data_size=10240
+GenL1.menu.pnum.GENERIC_L151C8.build.board=GENERIC_L151C8
+GenL1.menu.pnum.GENERIC_L151C8.build.product_line=STM32L151xB
+GenL1.menu.pnum.GENERIC_L151C8.build.variant=STM32L1xx/Generic_L151Cx
+
+# Generic L151CB board
+GenL1.menu.pnum.GENERIC_L151CB=Generic L151CB
+GenL1.menu.pnum.GENERIC_L151CB.upload.maximum_size=131072
+GenL1.menu.pnum.GENERIC_L151CB.upload.maximum_data_size=16384
+GenL1.menu.pnum.GENERIC_L151CB.build.board=GENERIC_L151CB
+GenL1.menu.pnum.GENERIC_L151CB.build.product_line=STM32L151xB
+GenL1.menu.pnum.GENERIC_L151CB.build.variant=STM32L1xx/Generic_L151Cx
+
+# Generic L151C6-A board
+GenL1.menu.pnum.GENERIC_L151C6_A=Generic L151C6-A
+GenL1.menu.pnum.GENERIC_L151C6_A.upload.maximum_size=32768
+GenL1.menu.pnum.GENERIC_L151C6_A.upload.maximum_data_size=16384
+GenL1.menu.pnum.GENERIC_L151C6_A.build.board=GENERIC_L151C6_A
+GenL1.menu.pnum.GENERIC_L151C6_A.build.product_line=STM32L151xBA
+GenL1.menu.pnum.GENERIC_L151C6_A.build.variant=STM32L1xx/Generic_L151Cx
+
+# Generic L151C8-A board
+GenL1.menu.pnum.GENERIC_L151C8_A=Generic L151C8-A
+GenL1.menu.pnum.GENERIC_L151C8_A.upload.maximum_size=65536
+GenL1.menu.pnum.GENERIC_L151C8_A.upload.maximum_data_size=32768
+GenL1.menu.pnum.GENERIC_L151C8_A.build.board=GENERIC_L151C8_A
+GenL1.menu.pnum.GENERIC_L151C8_A.build.product_line=STM32L151xBA
+GenL1.menu.pnum.GENERIC_L151C8_A.build.variant=STM32L1xx/Generic_L151Cx
+
+# Generic L151CB-A board
+GenL1.menu.pnum.GENERIC_L151CB_A=Generic L151CB-A
+GenL1.menu.pnum.GENERIC_L151CB_A.upload.maximum_size=131072
+GenL1.menu.pnum.GENERIC_L151CB_A.upload.maximum_data_size=32768
+GenL1.menu.pnum.GENERIC_L151CB_A.build.board=GENERIC_L151CB_A
+GenL1.menu.pnum.GENERIC_L151CB_A.build.product_line=STM32L151xBA
+GenL1.menu.pnum.GENERIC_L151CB_A.build.variant=STM32L1xx/Generic_L151Cx
+
+# Generic L152RE board
+GenL1.menu.pnum.GENERIC_L152RE=Generic L152RE
+GenL1.menu.pnum.GENERIC_L152RE.upload.maximum_size=524288
+GenL1.menu.pnum.GENERIC_L152RE.upload.maximum_data_size=81920
+GenL1.menu.pnum.GENERIC_L152RE.build.board=GENERIC_L152RE
+GenL1.menu.pnum.GENERIC_L152RE.build.product_line=STM32L152xE
+GenL1.menu.pnum.GENERIC_L152RE.build.variant=STM32L1xx/Generic_L152RE
+
+# Upload menu
+GenL1.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)
+GenL1.menu.upload_method.swdMethod.upload.protocol=0
+GenL1.menu.upload_method.swdMethod.upload.options=-g
+GenL1.menu.upload_method.swdMethod.upload.tool=stm32CubeProg
+
+GenL1.menu.upload_method.serialMethod=STM32CubeProgrammer (Serial)
+GenL1.menu.upload_method.serialMethod.upload.protocol=1
+GenL1.menu.upload_method.serialMethod.upload.options={serial.port.file} -s
+GenL1.menu.upload_method.serialMethod.upload.tool=stm32CubeProg
+
+GenL1.menu.upload_method.dfuMethod=STM32CubeProgrammer (DFU)
+GenL1.menu.upload_method.dfuMethod.upload.protocol=2
+GenL1.menu.upload_method.dfuMethod.upload.options=-g
+GenL1.menu.upload_method.dfuMethod.upload.tool=stm32CubeProg
+
+################################################################################
 # Generic L4
 GenL4.name=Generic STM32L4 series
 
@@ -2462,23 +2545,23 @@ LoRa.build.extra_flags=-D{build.product_line} {build.enable_usb} {build.xSerial}
 
 # RAK811_TRACKER board
 LoRa.menu.pnum.RAK811_TRACKER=RAK811 LoRa Tracker (16kb RAM)
-LoRa.menu.pnum.RAK811_TRACKER.upload.maximum_data_size=16384
 LoRa.menu.pnum.RAK811_TRACKER.upload.maximum_size=131072
+LoRa.menu.pnum.RAK811_TRACKER.upload.maximum_data_size=16384
 LoRa.menu.pnum.RAK811_TRACKER.build.mcu=cortex-m3
 LoRa.menu.pnum.RAK811_TRACKER.build.board=RAK811_TRACKER
 LoRa.menu.pnum.RAK811_TRACKER.build.series=STM32L1xx
 LoRa.menu.pnum.RAK811_TRACKER.build.product_line=STM32L151xB
-LoRa.menu.pnum.RAK811_TRACKER.build.variant=STM32L1xx/RAK811_TRACKER
+LoRa.menu.pnum.RAK811_TRACKER.build.variant=STM32L1xx/Generic_L151Cx
 LoRa.menu.pnum.RAK811_TRACKER.build.cmsis_lib_gcc=arm_cortexM3l_math
 
 LoRa.menu.pnum.RAK811_TRACKERA=RAK811 LoRa Tracker (32kb RAM)
-LoRa.menu.pnum.RAK811_TRACKERA.upload.maximum_data_size=32768
 LoRa.menu.pnum.RAK811_TRACKERA.upload.maximum_size=131072
+LoRa.menu.pnum.RAK811_TRACKERA.upload.maximum_data_size=32768
 LoRa.menu.pnum.RAK811_TRACKERA.build.mcu=cortex-m3
 LoRa.menu.pnum.RAK811_TRACKERA.build.board=RAK811_TRACKERA
 LoRa.menu.pnum.RAK811_TRACKERA.build.series=STM32L1xx
 LoRa.menu.pnum.RAK811_TRACKERA.build.product_line=STM32L151xBA
-LoRa.menu.pnum.RAK811_TRACKERA.build.variant=STM32L1xx/RAK811_TRACKER
+LoRa.menu.pnum.RAK811_TRACKERA.build.variant=STM32L1xx/Generic_L151Cx
 LoRa.menu.pnum.RAK811_TRACKERA.build.cmsis_lib_gcc=arm_cortexM3l_math
 
 # RHF76_052 board
@@ -2996,6 +3079,12 @@ GenL0.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
 GenL0.menu.xserial.disabled=Disabled (no Serial support)
 GenL0.menu.xserial.disabled.build.xSerial=
 
+GenL1.menu.xserial.generic=Enabled (generic 'Serial')
+GenL1.menu.xserial.none=Enabled (no generic 'Serial')
+GenL1.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
+GenL1.menu.xserial.disabled=Disabled (no Serial support)
+GenL1.menu.xserial.disabled.build.xSerial=
+
 GenL4.menu.xserial.generic=Enabled (generic 'Serial')
 GenL4.menu.xserial.none=Enabled (no generic 'Serial')
 GenL4.menu.xserial.none.build.xSerial=-DHAL_UART_MODULE_ENABLED -DHWSERIAL_NONE
@@ -3208,6 +3297,14 @@ GenL0.menu.usb.CDC=CDC (no generic 'Serial')
 GenL0.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
 GenL0.menu.usb.HID=HID (keyboard and mouse)
 GenL0.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
+
+GenL1.menu.usb.none=None
+GenL1.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
+GenL1.menu.usb.CDCgen.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC
+GenL1.menu.usb.CDC=CDC (no generic 'Serial')
+GenL1.menu.usb.CDC.build.enable_usb={build.usb_flags} -DUSBD_USE_CDC -DDISABLE_GENERIC_SERIALUSB
+GenL1.menu.usb.HID=HID (keyboard and mouse)
+GenL1.menu.usb.HID.build.enable_usb={build.usb_flags} -DUSBD_USE_HID_COMPOSITE
 
 GenL4.menu.usb.none=None
 GenL4.menu.usb.CDCgen=CDC (generic 'Serial' supersede U(S)ART)
@@ -3548,6 +3645,25 @@ GenL0.menu.opt.o3lto.build.flags.optimize=-O3 -flto
 GenL0.menu.opt.ogstd=Debug (-g)
 GenL0.menu.opt.ogstd.build.flags.optimize=-g -Og
 
+GenL1.menu.opt.osstd=Smallest (-Os default)
+GenL1.menu.opt.osstd.build.flags.optimize=-Os
+GenL1.menu.opt.oslto=Smallest (-Os) with LTO
+GenL1.menu.opt.oslto.build.flags.optimize=-Os -flto
+GenL1.menu.opt.o1std=Fast (-O1)
+GenL1.menu.opt.o1std.build.flags.optimize=-O1
+GenL1.menu.opt.o1lto=Fast (-O1) with LTO
+GenL1.menu.opt.o1lto.build.flags.optimize=-O1 -flto
+GenL1.menu.opt.o2std=Faster (-O2)
+GenL1.menu.opt.o2std.build.flags.optimize=-O2
+GenL1.menu.opt.o2lto=Faster (-O2) with LTO
+GenL1.menu.opt.o2lto.build.flags.optimize=-O2 -flto
+GenL1.menu.opt.o3std=Fastest (-O3)
+GenL1.menu.opt.o3std.build.flags.optimize=-O3
+GenL1.menu.opt.o3lto=Fastest (-O3) with LTO
+GenL1.menu.opt.o3lto.build.flags.optimize=-O3 -flto
+GenL1.menu.opt.ogstd=Debug (-g)
+GenL1.menu.opt.ogstd.build.flags.optimize=-g -Og
+
 GenL4.menu.opt.osstd=Smallest (-Os default)
 GenL4.menu.opt.osstd.build.flags.optimize=-Os
 GenL4.menu.opt.oslto=Smallest (-Os) with LTO
@@ -3871,6 +3987,16 @@ GenL0.menu.rtlib.nanofps=Newlib Nano + Float Printf/Scanf
 GenL0.menu.rtlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
 GenL0.menu.rtlib.full=Newlib Standard
 GenL0.menu.rtlib.full.build.flags.ldspecs=
+
+GenL1.menu.rtlib.nano=Newlib Nano (default)
+GenL1.menu.rtlib.nanofp=Newlib Nano + Float Printf
+GenL1.menu.rtlib.nanofp.build.flags.ldspecs=--specs=nano.specs -u _printf_float
+GenL1.menu.rtlib.nanofs=Newlib Nano + Float Scanf
+GenL1.menu.rtlib.nanofs.build.flags.ldspecs=--specs=nano.specs -u _scanf_float
+GenL1.menu.rtlib.nanofps=Newlib Nano + Float Printf/Scanf
+GenL1.menu.rtlib.nanofps.build.flags.ldspecs=--specs=nano.specs -u _printf_float -u _scanf_float
+GenL1.menu.rtlib.full=Newlib Standard
+GenL1.menu.rtlib.full.build.flags.ldspecs=
 
 GenL4.menu.rtlib.nano=Newlib Nano (default)
 GenL4.menu.rtlib.nanofp=Newlib Nano + Float Printf
