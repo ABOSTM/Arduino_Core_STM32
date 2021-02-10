@@ -94,7 +94,7 @@ Nucleo_144.menu.pnum.NUCLEO_H743ZI.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi=
 Nucleo_144.menu.pnum.NUCLEO_H743ZI.build.board=NUCLEO_H743ZI
 Nucleo_144.menu.pnum.NUCLEO_H743ZI.build.series=STM32H7xx
 Nucleo_144.menu.pnum.NUCLEO_H743ZI.build.product_line=STM32H743xx
-Nucleo_144.menu.pnum.NUCLEO_H743ZI.build.variant=STM32H7xx/NUCLEO_H743ZI
+Nucleo_144.menu.pnum.NUCLEO_H743ZI.build.variant=STM32H7xx/Generic_H743Zx
 Nucleo_144.menu.pnum.NUCLEO_H743ZI.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
 
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2=Nucleo H743ZI2
@@ -106,7 +106,7 @@ Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.flags.fp=-mfpu=fpv4-sp-d16 -mfloat-abi
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.board=NUCLEO_H743ZI2
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.series=STM32H7xx
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.product_line=STM32H743xx
-Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.variant=STM32H7xx/NUCLEO_H743ZI
+Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.variant=STM32H7xx/Generic_H743Zx
 Nucleo_144.menu.pnum.NUCLEO_H743ZI2.build.cmsis_lib_gcc=arm_cortexM7lfsp_math
 
 # NUCLEO_L496ZG board
@@ -1994,7 +1994,32 @@ GenH7.menu.pnum.DAISY_SEED.upload.maximum_size=131072
 GenH7.menu.pnum.DAISY_SEED.upload.maximum_data_size=524288
 GenH7.menu.pnum.DAISY_SEED.build.board=DAISY_SEED
 GenH7.menu.pnum.DAISY_SEED.build.product_line=STM32H750xx
-GenH7.menu.pnum.DAISY_SEED.build.variant=STM32H7xx/DAISY_SEED
+GenH7.menu.pnum.DAISY_SEED.build.variant=STM32H7xx/Generic_H750IBK
+GenH7.menu.pnum.DAISY_SEED.build.ldscript=DAISY_SEED.ld
+
+# Generic H743ZG board
+GenH7.menu.pnum.GENERIC_H743ZG=Generic H743ZG
+GenH7.menu.pnum.GENERIC_H743ZG.upload.maximum_size=1048576
+GenH7.menu.pnum.GENERIC_H743ZG.upload.maximum_data_size=524288
+GenH7.menu.pnum.GENERIC_H743ZG.build.board=GENERIC_H743ZG
+GenH7.menu.pnum.GENERIC_H743ZG.build.product_line=STM32H743xx
+GenH7.menu.pnum.GENERIC_H743ZG.build.variant=STM32H7xx/Generic_H743Zx
+
+# Generic H743ZI board
+GenH7.menu.pnum.GENERIC_H743ZI=Generic H743ZI
+GenH7.menu.pnum.GENERIC_H743ZI.upload.maximum_size=2097152
+GenH7.menu.pnum.GENERIC_H743ZI.upload.maximum_data_size=524288
+GenH7.menu.pnum.GENERIC_H743ZI.build.board=GENERIC_H743ZI
+GenH7.menu.pnum.GENERIC_H743ZI.build.product_line=STM32H743xx
+GenH7.menu.pnum.GENERIC_H743ZI.build.variant=STM32H7xx/Generic_H743Zx
+
+# Generic H750IBK board
+GenH7.menu.pnum.GENERIC_H750IBK=Generic H750IBK
+GenH7.menu.pnum.GENERIC_H750IBK.upload.maximum_size=131072
+GenH7.menu.pnum.GENERIC_H750IBK.upload.maximum_data_size=524288
+GenH7.menu.pnum.GENERIC_H750IBK.build.board=GENERIC_H750IBK
+GenH7.menu.pnum.GENERIC_H750IBK.build.product_line=STM32H750xx
+GenH7.menu.pnum.GENERIC_H750IBK.build.variant=STM32H7xx/Generic_H750IBK
 
 # Upload menu
 GenH7.menu.upload_method.swdMethod=STM32CubeProgrammer (SWD)

@@ -244,7 +244,9 @@ User can add a STM32 based board following this [wiki](https://github.com/stm32d
 
 | Status | Device(s) | Name | Release | Notes |
 | :----: | :-------: | ---- | :-----: | :---- |
-| :green_heart: | STM32H750IB | [Daisy ](https://www.electro-smith.com/daisy/daisy) | *1.9.0* |  |
+| :yellow_heart: | STM32H743ZG<br>STM32H743ZI | Generic Board | **2.0.0** |  |
+| :yellow_heart: | STM32H750IBK | Generic Board | **2.0.0** |  |
+| :green_heart: | STM32H750IBK | [Daisy ](https://www.electro-smith.com/daisy/daisy) | *1.9.0* |  |
 
 ### Generic STM32L0 boards
 
