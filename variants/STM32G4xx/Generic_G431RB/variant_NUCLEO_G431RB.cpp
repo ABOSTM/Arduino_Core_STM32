@@ -1,6 +1,6 @@
 /*
  *******************************************************************************
- * Copyright (c) 2019, STMicroelectronics
+ * Copyright (c) 2021, STMicroelectronics
  * All rights reserved.
  *
  * This software component is licensed by ST under BSD 3-Clause license,
@@ -10,14 +10,14 @@
  *
  *******************************************************************************
  */
-
+#if defined(ARDUINO_NUCLEO_G431RB)
 #include "pins_arduino.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-// Pin number
+// Digital PinName array
 const PinName digitalPin[] = {
   // CN9
   PC_5,  //D0
@@ -95,15 +95,7 @@ const uint32_t analogInputPin[] = {
   43  // A11
 };
 
-#ifdef __cplusplus
-}
-#endif
-
 // ----------------------------------------------------------------------------
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
   * @brief  System Clock Configuration
@@ -156,5 +148,7 @@ WEAK void SystemClock_Config(void)
 }
 
 #ifdef __cplusplus
-}
+} // extern "C"
 #endif
+#endif /* ARDUINO_NUCLEO_G431RB */
+

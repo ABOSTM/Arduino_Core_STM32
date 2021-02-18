@@ -1,6 +1,6 @@
 /*
  *******************************************************************************
- * Copyright (c) 2019, STMicroelectronics
+ * Copyright (c) 2021, STMicroelectronics
  * All rights reserved.
  *
  * This software component is licensed by ST under BSD 3-Clause license,
@@ -10,16 +10,16 @@
  *
  *******************************************************************************
  */
+#if defined(ARDUINO_NUCLEO_G474RE)
 
 #ifndef _VARIANT_ARDUINO_STM32_
 #define _VARIANT_ARDUINO_STM32_
-
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
 
 /*----------------------------------------------------------------------------
- *        Pins
+ *        STM32 pins number
  *----------------------------------------------------------------------------*/
 // CN9
 #define PC5  0
@@ -80,37 +80,113 @@ extern "C" {
 #define PA2  49
 #define PA3  50
 
-// This must be a literal
+
+// Alternate pins number
+#define PA0_ALT1                (PA0  | ALT1)
+#define PA1_ALT1                (PA1  | ALT1)
+#define PA1_ALT2                (PA1  | ALT2)
+#define PA2_ALT1                (PA2  | ALT1)
+#define PA2_ALT2                (PA2  | ALT2)
+#define PA3_ALT1                (PA3  | ALT1)
+#define PA3_ALT2                (PA3  | ALT2)
+#define PA4_ALT1                (PA4  | ALT1)
+#define PA6_ALT1                (PA6  | ALT1)
+#define PA7_ALT1                (PA7  | ALT1)
+#define PA7_ALT2                (PA7  | ALT2)
+#define PA7_ALT3                (PA7  | ALT3)
+#define PA9_ALT1                (PA9  | ALT1)
+#define PA10_ALT1               (PA10 | ALT1)
+#define PA11_ALT1               (PA11 | ALT1)
+#define PA11_ALT2               (PA11 | ALT2)
+#define PA12_ALT1               (PA12 | ALT1)
+#define PA12_ALT2               (PA12 | ALT2)
+#define PA13_ALT1               (PA13 | ALT1)
+#define PA15_ALT1               (PA15 | ALT1)
+#define PB0_ALT1                (PB0  | ALT1)
+#define PB0_ALT2                (PB0  | ALT2)
+#define PB1_ALT1                (PB1  | ALT1)
+#define PB1_ALT2                (PB1  | ALT2)
+#define PB2_ALT1                (PB2  | ALT1)
+#define PB3_ALT1                (PB3  | ALT1)
+#define PB4_ALT1                (PB4  | ALT1)
+#define PB4_ALT2                (PB4  | ALT2)
+#define PB5_ALT1                (PB5  | ALT1)
+#define PB5_ALT2                (PB5  | ALT2)
+#define PB6_ALT1                (PB6  | ALT1)
+#define PB6_ALT2                (PB6  | ALT2)
+#define PB7_ALT1                (PB7  | ALT1)
+#define PB7_ALT2                (PB7  | ALT2)
+#define PB8_ALT1                (PB8  | ALT1)
+#define PB8_ALT2                (PB8  | ALT2)
+#define PB9_ALT1                (PB9  | ALT1)
+#define PB9_ALT2                (PB9  | ALT2)
+#define PB9_ALT3                (PB9  | ALT3)
+#define PB11_ALT1               (PB11 | ALT1)
+#define PB12_ALT1               (PB12 | ALT1)
+#define PB13_ALT1               (PB13 | ALT1)
+#define PB14_ALT1               (PB14 | ALT1)
+#define PB15_ALT1               (PB15 | ALT1)
+#define PB15_ALT2               (PB15 | ALT2)
+#define PC0_ALT1                (PC0  | ALT1)
+#define PC1_ALT1                (PC1  | ALT1)
+#define PC2_ALT1                (PC2  | ALT1)
+#define PC3_ALT1                (PC3  | ALT1)
+#define PC6_ALT1                (PC6  | ALT1)
+#define PC7_ALT1                (PC7  | ALT1)
+#define PC8_ALT1                (PC8  | ALT1)
+#define PC8_ALT2                (PC8  | ALT2)
+#define PC9_ALT1                (PC9  | ALT1)
+#define PC10_ALT1               (PC10 | ALT1)
+#define PC11_ALT1               (PC11 | ALT1)
+#define PC12_ALT1               (PC12 | ALT1)
+#define PC13_ALT1               (PC13 | ALT1)
+
+
 #define NUM_DIGITAL_PINS        51
-// This must be a literal with a value less than or equal to to MAX_ANALOG_INPUTS
 #define NUM_ANALOG_INPUTS       13
 
 // On-board LED pin number
+#ifndef LED_BUILTIN
 #define LED_BUILTIN             PA5
+#endif
 #define LED_GREEN               LED_BUILTIN
 
 // On-board user button
+#ifndef USER_BTN
 #define USER_BTN                PC13
+#endif
 
 // Timer Definitions
 // Use TIM6/TIM7 when possible as servo and tone don't need GPIO output pin
+#ifndef TIMER_TONE
 #define TIMER_TONE              TIM6
+#endif
+#ifndef TIMER_SERVO
 #define TIMER_SERVO             TIM7
+#endif
 
 // UART Definitions
-#define SERIAL_UART_INSTANCE    0 //Connected to ST-Link
+#ifndef SERIAL_UART_INSTANCE
+#define SERIAL_UART_INSTANCE    101 //Connected to ST-Link
+#endif
 
 // Default pin used for 'Serial' instance (ex: ST-Link)
 // Mandatory for Firmata
+#ifndef PIN_SERIAL_RX
 #define PIN_SERIAL_RX           PA3
+#endif
+#ifndef PIN_SERIAL_TX
 #define PIN_SERIAL_TX           PA2
+#endif
 
-/* Extra HAL modules */
+// Extra HAL modules
 #define HAL_DAC_MODULE_ENABLED
+#define HAL_QSPI_MODULE_ENABLED
 
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
 /*----------------------------------------------------------------------------
  *        Arduino objects - C++ only
  *----------------------------------------------------------------------------*/
@@ -132,7 +208,8 @@ extern "C" {
   // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
   //                            pins are NOT connected to anything by default.
   #define SERIAL_PORT_MONITOR   Serial
-  #define SERIAL_PORT_HARDWARE  SerialLP1
+  #define SERIAL_PORT_HARDWARE  Serial
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */
+#endif /* ARDUINO_NUCLEO_G474RE* */

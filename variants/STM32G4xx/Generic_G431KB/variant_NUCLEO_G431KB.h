@@ -1,6 +1,6 @@
 /*
  *******************************************************************************
- * Copyright (c) 2019, STMicroelectronics
+ * Copyright (c) 2021, STMicroelectronics
  * All rights reserved.
  *
  * This software component is licensed by ST under BSD 3-Clause license,
@@ -10,6 +10,7 @@
  *
  *******************************************************************************
  */
+#if defined(ARDUINO_NUCLEO_G431KB)
 
 #ifndef _VARIANT_ARDUINO_STM32_
 #define _VARIANT_ARDUINO_STM32_
@@ -19,7 +20,7 @@ extern "C" {
 #endif // __cplusplus
 
 /*----------------------------------------------------------------------------
- *        Pins
+ *        STM32 pins number
  *----------------------------------------------------------------------------*/
 // CN4
 #define PA10 0
@@ -46,13 +47,14 @@ extern "C" {
 #define PA7  A6
 #define PA2  A7 // SB1 ON VCP TX
 
-// This must be a literal
+
 #define NUM_DIGITAL_PINS        22
-// This must be a literal with a value less than or equal to to MAX_ANALOG_INPUTS
 #define NUM_ANALOG_INPUTS       8
 
 // On-board LED pin number
+#ifndef LED_BUILTIN
 #define LED_BUILTIN             PB8
+#endif
 #define LED_GREEN               LED_BUILTIN
 
 // SPI Definitions
@@ -67,23 +69,34 @@ extern "C" {
 
 // Timer Definitions
 // Use TIM6/TIM7 when possible as servo and tone don't need GPIO output pin
+#ifndef TIMER_TONE
 #define TIMER_TONE              TIM6
+#endif
+#ifndef TIMER_SERVO
 #define TIMER_SERVO             TIM7
+#endif
 
 // UART Definitions
+#ifndef SERIAL_UART_INSTANCE
 #define SERIAL_UART_INSTANCE    2 //Connected to ST-Link
+#endif
 
 // Default pin used for 'Serial' instance (ex: ST-Link)
 // Mandatory for Firmata
+#ifndef PIN_SERIAL_RX
 #define PIN_SERIAL_RX           PA3
+#endif
+#ifndef PIN_SERIAL_TX
 #define PIN_SERIAL_TX           PA2
+#endif
 
-/* Extra HAL modules */
+// Extra HAL modules
 #define HAL_DAC_MODULE_ENABLED
 
 #ifdef __cplusplus
 } // extern "C"
 #endif
+
 /*----------------------------------------------------------------------------
  *        Arduino objects - C++ only
  *----------------------------------------------------------------------------*/
@@ -109,3 +122,4 @@ extern "C" {
 #endif
 
 #endif /* _VARIANT_ARDUINO_STM32_ */
+#endif /* ARDUINO_NUCLEO_G431KB */
