@@ -1385,6 +1385,16 @@ def print_boards_entry():
     return generic_list
 
 
+def print_general_clock(generic_list):
+    generic_clock_template = j2_env.get_template(generic_clock_filename)
+    generic_clock_file.write(
+        generic_clock_template.render(
+            year=datetime.datetime.now().year,
+            generic_list=generic_list,
+        )
+    )
+
+
 # List management
 tokenize = re.compile(r"(\d+)|(\D+)").findall
 
@@ -1713,6 +1723,7 @@ config_filename = Path("variant_config.json")
 variant_h_filename = "variant.h"
 variant_cpp_filename = "variant.cpp"
 boards_entry_filename = "boards_entry.txt"
+generic_clock_filename = "generic_clock.c"
 repo_local_path = cur_dir / "repo"
 cubemxdir = ""
 gh_url = "https://github.com/STMicroelectronics/STM32_open_pin_data"
@@ -1726,7 +1737,13 @@ check_config()
 parser = argparse.ArgumentParser(
     description=textwrap.dedent(
         """\
-By default, generate {}, {}, {}, {} and {}
+By default, generates:
+ - {},
+ - {},
+ - {},
+ - {},
+ - {}
+ - {}
 for all xml files description available in STM32CubeMX internal database.
 Internal database path must be defined in {}.
 It can be the one from STM32CubeMX directory if defined:
@@ -1740,6 +1757,7 @@ or the one from GitHub:
             variant_cpp_filename,
             variant_h_filename,
             boards_entry_filename,
+            generic_clock_filename,
             config_filename,
             cubemxdir,
             gh_url,
@@ -1766,15 +1784,10 @@ group.add_argument(
     metavar="xml",
     help=textwrap.dedent(
         """\
-Generate {}, {}, {} and {}
-for specified mcu xml file description in database.
+Generate all files for specified mcu xml file description in database.
 This xml file can contain non alpha characters in its name,
-you should call it with double quotes""".format(
-            periph_c_filename,
-            pinvar_h_filename,
-            variant_cpp_filename,
-            variant_h_filename,
-        )
+you should call it with double quotes.
+"""
     ),
 )
 
@@ -1892,6 +1905,7 @@ for mcu_file in mcu_list:
     variant_cpp_filepath = out_temp_path / variant_cpp_filename
     variant_h_filepath = out_temp_path / variant_h_filename
     boards_entry_filepath = out_temp_path / boards_entry_filename
+    generic_clock_filepath = out_temp_path / generic_clock_filename
     out_temp_path.mkdir(parents=True, exist_ok=True)
 
     # open output file
@@ -1900,12 +1914,13 @@ for mcu_file in mcu_list:
     variant_cpp_file = open(variant_cpp_filepath, "w", newline="\n")
     variant_h_file = open(variant_h_filepath, "w", newline="\n")
     boards_entry_file = open(boards_entry_filepath, "w", newline="\n")
-
+    generic_clock_file = open(generic_clock_filepath, "w", newline="\n")
     parse_pins()
     sort_my_lists()
     manage_alternate()
 
     generic_list = print_boards_entry()
+    print_general_clock(generic_list)
     print_peripheral()
     print_pinamevar()
     print_variant(generic_list)
@@ -1932,6 +1947,7 @@ for mcu_file in mcu_list:
     variant_h_file.close()
     variant_cpp_file.close()
     boards_entry_file.close()
+    generic_clock_file.close()
     xml_mcu.unlink()
     xml_gpio.unlink()
 
@@ -2062,7 +2078,7 @@ for mcu_family in mcu_families:
                     new_line_c += " || {}".format(pre)
                     new_line_h += " && !{}".format(pre)
             update_file(mcu_dir / variant_cpp_filename, update_regex, new_line_c)
-
+            update_file(mcu_dir / generic_clock_filename, update_regex, new_line_c)
             update_file(mcu_dir / variant_h_filename, update_regex, new_line_h)
 
             # Appending to board_entry file
@@ -2077,8 +2093,12 @@ for mcu_family in mcu_families:
 
         # Move to variants/ folder
         out_path = out_family_path / mcu_dir.stem
+        generic_clock_filepath = out_path / generic_clock_filename
         out_path.mkdir(parents=True, exist_ok=True)
         for fname in mcu_dir.glob("*.*"):
-            fname.replace(out_path / fname.name)
+            if fname.name == generic_clock_filename and generic_clock_filepath.exists():
+                fname.unlink()
+            else:
+                fname.replace(out_path / fname.name)
 # Clean temporary dir
 rm_tree(tmp_dir)
