@@ -73,36 +73,47 @@ void pin_function(PinName pin, int function)
   }
 
   /* Handle pin remap if any */
-#if defined(LL_SYSCFG_PIN_RMP_PA11) && defined(LL_SYSCFG_PIN_RMP_PA12)
-  if ((pin >= PA_9) && (pin <= PA_12)) {
-    __HAL_RCC_SYSCFG_CLK_ENABLE();
-    switch ((int)pin) {
-      case PA_9:
+#if defined(LL_SYSCFG_PIN_RMP_PA11) && defined(LL_SYSCFG_PIN_RMP_PA12) || defined(SYSCFG_CFGR1_PA11_PA12_RMP)
+  __HAL_RCC_SYSCFG_CLK_ENABLE();
+  switch (pin & PNAME_MASK) {
+#if defined(SYSCFG_CFGR1_PA11_PA12_RMP)
+    /* Disable PIN pair PA11/12 mapped instead of PA9/10 */
+    case PA_9:
+    case PA_10:
+      LL_SYSCFG_DisablePinRemap();
+      break;
+    /* Enable PIN pair PA11/12 mapped instead of PA9/10 */
+    case PA_11:
+    case PA_12:
+      if ((pin & PREMAP) == PREMAP) {
+        LL_SYSCFG_EnablePinRemap();
+      }
+      break;
+#else
+    case PA_9:
+      if ((pin & PREMAP) == PREMAP) {
         LL_SYSCFG_EnablePinRemap(LL_SYSCFG_PIN_RMP_PA11);
-        break;
-      case PA_11:
-        LL_SYSCFG_DisablePinRemap(LL_SYSCFG_PIN_RMP_PA11);
-        break;
-      case PA_10:
+      }
+      break;
+    case PA_10:
+      if ((pin & PREMAP) == PREMAP) {
         LL_SYSCFG_EnablePinRemap(LL_SYSCFG_PIN_RMP_PA12);
-        break;
-      case PA_12:
-        LL_SYSCFG_DisablePinRemap(LL_SYSCFG_PIN_RMP_PA12);
-        break;
-      default:
-        break;
-    }
+      }
+      break;
+    case PA_11:
+      LL_SYSCFG_DisablePinRemap(LL_SYSCFG_PIN_RMP_PA11);
+      break;
+    case PA_12:
+      LL_SYSCFG_DisablePinRemap(LL_SYSCFG_PIN_RMP_PA12);
+      break;
+#endif
+    default:
+      break;
   }
 #endif
 
   /* Enable GPIO clock */
   GPIO_TypeDef *gpio = set_GPIO_Port_Clock(port);
-
-#if defined (STM32L5xx)
-  /* Validate the VDDIO2 supply for electrical and logical isolation purpose. */
-  __HAL_RCC_PWR_CLK_ENABLE();
-  HAL_PWREx_EnableVddIO2();
-#endif /* STM32L5xx */
 
   hsem_lock(CFG_HW_GPIO_SEMID, HSEM_LOCK_DEFAULT_RETRY);
 
